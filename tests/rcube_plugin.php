@@ -2,6 +2,9 @@
 
 class rcube_plugin
 {
+
+    public $urlbase = 'plugins/authres_status/';
+
     public function gettext($p)
     {
         global $labels;
