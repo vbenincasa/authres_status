@@ -146,7 +146,7 @@ EOT;
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_partial_pass.png" alt="partialpass" title="Some signatures are invalid but at least one is valid for the sender's domain. verified by dkim=pass (1024-bit key; secure); arc=none" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_pass.png" alt="signaturepass" title="Valid signature(s) from the sender's domain. verified by dkim=pass (1024-bit key; secure); arc=none" class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
