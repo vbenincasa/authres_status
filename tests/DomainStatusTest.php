@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DomainStatusTest extends TestCase
 {
+
     public function test_pass_from_subdomain()
     {
         $headers = $this->create_header_object(
@@ -160,7 +161,7 @@ EOT;
         $result = $plugin->get_authentication_status($headers);
 
         $expected = <<<EOT
-<img src="plugins/authres_status/images/status_partial_pass.png" alt="partialpass" title="Some signatures are invalid but at least one is valid for the sender's domain. verified by dkim=pass; dmarc=fail" class="authres-status-img" /> 
+<img src="plugins/authres_status/images/status_fail.png" alt="invalidsignature" title="Signature is not valid! verified by dkim=pass; dmarc=fail" class="authres-status-img" /> 
 EOT;
 
         $this->assertEquals($expected, $result);
